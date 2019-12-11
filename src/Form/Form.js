@@ -15,17 +15,21 @@ class Form extends Component {
   }
 
 
-  // handleChange = e => {
-  // e.target.name === "name" ? 
-  // this.setState({name: e.target.value})
-  // : e.target.name === "date" ? 
-  // this.setState({date: e.target.value})
-  // : e.target.name === "time" ? 
-  // this.setState({time: e.target.value})
-  // : e.target.name === "number" ?
-  // this.setState({number: e.target.value})
-  // : null 
-  // }
+  handleChange = (e) => {
+    if (e.target.id === "name") {
+    this.setState({name: e.target.value})
+    } else if (e.target.id === "date") {
+      let dateArr = e.target.value.split('-').reverse();
+      let date = dateArr.slice(0, 2).join('/')
+      this.setState({date: date})
+    } else if (e.target.id === "time") {
+      this.setState({time: e.target.value})
+    }else if (e.target.id === "number") {
+      this.setState({number: e.target.value})
+    } else {
+      console.log(null)
+    }
+  }
 
   submitReservation = (e) => {
     e.preventDefault();
@@ -46,10 +50,10 @@ class Form extends Component {
       <div className='form-wrapper-div'>
         <h2 className={this.state.className}>Please fill out all inputs to submit reservation</h2>
         <div className='input-wrapper-div'>
-        <input className="form-input" type='text' name="name" placeholder="Name"></input>
-        <input className="form-input" type='date' name="date" min="2019-12-11" placeholder="Date(mm/dd)"></input>
-        <input className="form-input" type='text' name="time" placeholder="Time"></input>
-        <input className="form-input" type='number' name="number" placeholder="Number of Guests"></input>
+        <input id="name"className="form-input" type='text' name="name" placeholder="Name" onChange={this.handleChange}></input>
+        <input id="date" className="form-input" type='date' name="date" min="2019-12-11" onChange={this.handleChange} placeholder="Date(mm/dd)"></input>
+        <input id="time" className="form-input" type='time' step="60" name="time" onChange={this.handleChange} placeholder="Time"></input>
+        <input id="number" className="form-input" type='number' name="number" onChange={this.handleChange} placeholder="Number of Guests"></input>
         <button onclick="form-input" className='submit-btn'>Make Reservation</button>
         </div>
       </div>
