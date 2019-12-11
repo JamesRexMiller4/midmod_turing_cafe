@@ -1,3 +1,7 @@
+import React from 'react'
+import PropTypes from 'prop-types';
+
+
 const Card = ({ name, date, time, guests}) => {
   return ( 
     <div>
@@ -11,3 +15,13 @@ const Card = ({ name, date, time, guests}) => {
 }
  
 export default Card;
+
+
+Card.propTypes = {
+
+  name:PropTypes.string,
+  date:PropTypes.number,
+  time:PropTypes.number,
+  guests:PropTypes.number
+
+}
