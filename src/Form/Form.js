@@ -17,14 +17,26 @@ class Form extends Component {
 
   handleChange = (e) => {
     if (e.target.id === "name") {
-    this.setState({name: e.target.value})
+    this.setState({name: e.target.value});
     } else if (e.target.id === "date") {
       let dateArr = e.target.value.split('-').reverse();
-      let date = dateArr.slice(0, 2).join('/')
+      let date = dateArr.slice(0, 2).join('/');
       this.setState({date: date})
     } else if (e.target.id === "time") {
-      this.setState({time: e.target.value})
+      let time;
+      console.log(typeof e.target.value);
+      let timeArr = e.target.value.split(':');
+      if (parseInt(timeArr[0]) > 12) {
+        let hour = (parseInt(e.target.value) - 12);
+        timeArr[0] = hour.toString();
+        time = timeArr.join(':');
+        this.setState({time: time});
+      } else {
+        time = e.target.value;
+        this.setState({time: time})
+      }
     }else if (e.target.id === "number") {
+      console.log(e.target.value)
       this.setState({number: e.target.value})
     } else {
       console.log(null)
@@ -52,7 +64,7 @@ class Form extends Component {
         <div className='input-wrapper-div'>
         <input id="name"className="form-input" type='text' name="name" placeholder="Name" onChange={this.handleChange}></input>
         <input id="date" className="form-input" type='date' name="date" min="2019-12-11" onChange={this.handleChange} placeholder="Date(mm/dd)"></input>
-        <input id="time" className="form-input" type='time' step="60" name="time" onChange={this.handleChange} placeholder="Time"></input>
+        <input id="time" className="form-input" type='time' name="time" onChange={this.handleChange} placeholder="Time"></input>
         <input id="number" className="form-input" type='number' name="number" onChange={this.handleChange} placeholder="Number of Guests"></input>
         <button onclick="form-input" className='submit-btn'>Make Reservation</button>
         </div>
