@@ -2,19 +2,20 @@ import React from 'react'
 import Card from '../Card/Card'
 
 const Reservations = ({ data }) => {
+  console.log(data)
 
-  // const reservations = data.map((reservation, index) => {
-  //   <Card 
-  //     key={index}
-  //     name={reservation.name}
-  //     date={reservation.date}
-  //     time={reservation.time}
-  //     guests={reservation.guests}
-  //   />
-  // })
+  const reservations = data.map(reservation => {
+    return <Card 
+      key={reservation.id}
+      name={reservation.name}
+      date={reservation.date}
+      time={reservation.time}
+      number={reservation.number}
+    />
+  })
   return (
-    <div>
-      <Card />
+    <div className="reservations-wrapper-div">
+      {reservations}
     </div>
     );
 }
