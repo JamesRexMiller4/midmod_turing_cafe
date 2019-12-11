@@ -23,7 +23,7 @@ it('upon mounting it should have some state', () => {
     time: '',
     number: null,
     className: 'hidden'
-   }
+  }
 
   expect(wrapper.state()).toEqual(defaultState);
 });
@@ -37,12 +37,12 @@ it('should update state when handleChange is called', () => {
 });
 
 
-it.skip('should call submitReservation when button is clicked', () => {
-  let mockEvent = { preventDefault: jest.fn() };
+it('should call submitReservation when button is clicked', () => {
+  // let mockEvent = { preventDefault: jest.fn() };
   wrapper.instance().submitReservation = jest.fn();
 
   wrapper.find('#form-btn').simulate('click');
-  expect(wrapper.instance().submitReservation(mockEvent)).toHaveBeenCalled();
+  expect(submitReservation).toHaveBeenCalled();
   // expect(wrapper.instance().submitReservation(mockEvent)).toHaveBeenCalledTimes(1)
 });
 

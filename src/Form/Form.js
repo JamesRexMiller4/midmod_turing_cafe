@@ -20,10 +20,9 @@ class Form extends Component {
     } else if (e.target.id === "date") {
       let dateArr = e.target.value.split('-').reverse();
       let date = dateArr.slice(0, 2).join('/');
-      this.setState({date: date})
+      this.setState({date: date});
     } else if (e.target.id === "time") {
       let time;
-      console.log(typeof e.target.value);
       let timeArr = e.target.value.split(':');
       if (parseInt(timeArr[0]) > 12) {
         let hour = (parseInt(e.target.value) - 12);
@@ -35,16 +34,13 @@ class Form extends Component {
         this.setState({time: time});
       }
     } else if (e.target.id === "number") {
-      console.log(e.target.value)
       this.setState({number: e.target.value});
     } else {
       console.log(null);
     }
   }
 
-  submitReservation = (e) => {
-    e.preventDefault();
-    console.log('working')
+  submitReservation = () => {
     if (this.state.name.length > 0 && this.state.date.length > 0 
       && this.state.time.length > 0 && this.state.number > 0) {
         let query = {name: this.state.name, date: this.state.date, time: this.state.time, number: this.state.number}
