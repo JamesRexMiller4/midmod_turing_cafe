@@ -1,5 +1,6 @@
 import React from 'react'
-import Card from '../Card/Card'
+import Card from '../Card/Card';
+import './Reservation.css'
 
 const Reservations = ({ data }) => {
   console.log(data)
