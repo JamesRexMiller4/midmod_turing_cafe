@@ -15,8 +15,7 @@ class App extends Component {
     fetch('http://localhost:3001/api/v1/reservations')
       .then(res => res.json())
       .then(data => {
-        console.log(data)
-        this.setState({data: data});
+        return this.setState({data: data});
       })
   }
 
@@ -32,9 +31,7 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(reservation =>  {
-        console.log(reservation)
-        this.setState({data: [...this.state.data, reservation]})
-        return console.log(this.state.data)
+        return this.setState({data: [...this.state.data, reservation]});
       })
       .catch((err)=>console.log(err))
   }

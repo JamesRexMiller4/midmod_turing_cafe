@@ -18,7 +18,6 @@ export default Card;
 
 
 Card.propTypes = {
-  id: PropTypes.number,
   name:PropTypes.string,
   date:PropTypes.string,
   time:PropTypes.string,

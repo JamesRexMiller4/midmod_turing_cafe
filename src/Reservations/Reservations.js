@@ -10,7 +10,7 @@ const Reservations = ({ data }) => {
       name={reservation.name}
       date={reservation.date}
       time={reservation.time}
-      number={reservation.number}
+      number={parseInt(reservation.number)}
     />
   })
   return (

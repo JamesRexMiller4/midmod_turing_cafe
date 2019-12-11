@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import Reservation from './Reservations.js'
  
-describe('', () => {
+describe('Reservation', () => {
 let wrapper, data;
  
 beforeEach(() => {
