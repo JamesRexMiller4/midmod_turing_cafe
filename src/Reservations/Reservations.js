@@ -3,8 +3,7 @@ import Card from '../Card/Card';
 import './Reservation.css'
 
 const Reservations = ({ data }) => {
-  console.log(data)
-
+  
   const reservations = data.map(reservation => {
     return <Card 
       key={reservation.id}

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot with all the data passed through 1`] = `
+<div
+  className="reservations-wrapper-div"
+>
+  <Card
+    date="12/12"
+    key="1"
+    name="Jerry"
+    number={4}
+    time="12:12"
+  />
+  <Card
+    date="12/14"
+    key="2"
+    name="Barb"
+    number={2}
+    time="14:14"
+  />
+  <Card
+    date="12/12"
+    key="3"
+    name="Murph"
+    number={3}
+    time="1:12"
+  />
+</div>
+`;

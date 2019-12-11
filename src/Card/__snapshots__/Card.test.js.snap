@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot with all the data passed through 1`] = `
+<div
+  className="card-wrapper-div"
+>
+  <h2>
+    Jerry
+  </h2>
+  <h3>
+    12/12
+  </h3>
+  <h3>
+    12:12
+  </h3>
+  <h3>
+    Number of Guests: 
+    4
+  </h3>
+  <button
+    className="cancel btn"
+  >
+    Cancel
+  </button>
+</div>
+`;

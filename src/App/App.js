@@ -36,9 +36,6 @@ class App extends Component {
         this.setState({data: [...this.state.data, reservation]})
         return console.log(this.state.data)
       })
-      //   let reservation = reservations[0]
-      //   this.setState({data: [...this.state.data, reservation]})
-      // })
       .catch((err)=>console.log(err))
   }
   
