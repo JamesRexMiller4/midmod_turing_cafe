@@ -5,7 +5,6 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: null,
       name: '',
       date: '',
       time: '',
@@ -35,7 +34,7 @@ class Form extends Component {
         time = e.target.value;
         this.setState({time: time})
       }
-    }else if (e.target.id === "number") {
+    } else if (e.target.id === "number") {
       console.log(e.target.value)
       this.setState({number: e.target.value})
     } else {
@@ -45,9 +44,11 @@ class Form extends Component {
 
   submitReservation = (e) => {
     e.preventDefault();
+    console.log('working')
     if (this.state.name.length > 0 && this.state.date.length > 0 
       && this.state.time.length > 0 && this.state.number > 0) {
-        // updateReservations();
+        let query = {name: this.state.name, date: this.state.date, time: this.state.time, number: this.state.number}
+        this.props.createReservation(query);
       } else {
         this.setState({className: 'error'})
       }
@@ -66,7 +67,7 @@ class Form extends Component {
         <input id="date" className="form-input" type='date' name="date" min="2019-12-11" onChange={this.handleChange} placeholder="Date(mm/dd)"></input>
         <input id="time" className="form-input" type='time' name="time" onChange={this.handleChange} placeholder="Time"></input>
         <input id="number" className="form-input" type='number' name="number" onChange={this.handleChange} placeholder="Number of Guests"></input>
-        <button onclick="form-input" className='submit-btn'>Make Reservation</button>
+        <button onClick={this.submitReservation} className='submit-btn'>Make Reservation</button>
         </div>
       </div>
       );
