@@ -13,7 +13,7 @@ wrapper = shallow(<Form
 })
  
 it('should match the snapshot with all the data passed through', () => {
-  expect(wrapper).toMatchSnapshot()
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('upon mounting it should have some state', () => {
@@ -26,7 +26,7 @@ it('upon mounting it should have some state', () => {
    }
 
   expect(wrapper.state()).toEqual(defaultState);
-})
+});
 
 it('should update state when handleChange is called', () => {
   let mockEvent = { target: {id: 'name', value: "Jerry"} };
@@ -34,7 +34,7 @@ it('should update state when handleChange is called', () => {
   wrapper.instance().handleChange(mockEvent);
 
   expect(wrapper.state('name')).toEqual('Jerry');
-})
+});
 
 
 it.skip('should call submitReservation when button is clicked', () => {
@@ -44,4 +44,6 @@ it.skip('should call submitReservation when button is clicked', () => {
   wrapper.find('#form-btn').simulate('click');
   expect(wrapper.instance().submitReservation(mockEvent)).toHaveBeenCalled();
   // expect(wrapper.instance().submitReservation(mockEvent)).toHaveBeenCalledTimes(1)
+});
+
 });
